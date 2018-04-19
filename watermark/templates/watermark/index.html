@@ -1,0 +1,81 @@
+{% extends "watermark/bash.html" %} {# django inheriting watermark/bash.html #}
+
+{% block container %}  {# this Conten gode in this block of bash.html  #}
+
+{# This section for the container #}
+
+    <div class="container">
+
+{# This section for the row division bootstrap 4  #}
+
+        <div class="row justify-content-center align-items-center">
+
+{# This section for the form  and form start here , Form goese to url: host: #}
+
+            <form class="col-8" enctype="multipart/form-data" action="" method="post" id="targate">
+
+                {#  csrf_token is a security mesaure for the django form  #}
+
+                     {% csrf_token %}
+
+                {#  break for newline #}
+
+                    <br>
+
+                {#  Bootstrap 4 div for custome File which is and example form bootstrap 4 guid  #}
+
+                     <div class="custom-file" id="customFile" lang="es">
+                        <input type="file" class="custom-file-input" id="exampleInputFile" aria-describedby="fileHelp" name="myinput">
+                        <label class="custom-file-label" for="exampleInputFile" id="id">
+                           Select file...
+                        </label>
+                     </div>
+                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                      <option selected>visible</option>
+                      <option value="1">Visible</option>
+                      <option value="2">Invisible</option>
+                    </select>
+                    <div class="form-group">
+
+                          <textarea class="form-control" rows="5" id="comment"></textarea>
+                    </div>
+                    <div class="custom-file" id="watermarkFile" lang="es">
+                        <input type="file" class="custom-file-input" id="InputFile" aria-describedby="fileHelp" name="watermarkinput">
+                        <label class="custom-file-label" for="exampleInputFile" id="wid">
+                           Select watermark file...
+                        </label>
+                     </div>
+
+
+<!--this is comment -->
+                <!--this is comment -->
+
+
+                <input type="submit" value=" submit "  class="btn btn-outline-success my-2 my-sm-0">
+
+
+            </form>
+        </div>
+    </div>
+
+
+{#  This section for script   #}
+
+<script type="javascript">
+
+ document.getElementById("myfile").style.visibility= "hidden";
+
+ $(document).ready(function () {
+
+     var name = $('#exampleInputFile').attr("name");
+         $('#id').text("hi") ;
+
+ });
+
+
+{# end of script #}
+
+</script>
+
+
+{% endblock %}

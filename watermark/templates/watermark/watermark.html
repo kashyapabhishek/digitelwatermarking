@@ -1,0 +1,22 @@
+<h1>watermark</h1>
+
+
+        <div class="container">
+             <div class="row justify-content-center align-items-center">
+
+                 <div class="col-8">
+                     <br>
+                     <img src="{{ myfile }}" width="730px" height="400px" class="img-fluid img-thumbnail" alt="Responsive image ">
+                         <form enctype="multipart/form-data" action="/watermark" method="post" >
+                          {% csrf_token %}
+                         <br>
+                            <label class="col-10" name="myfile"></label>
+                            <input type="submit" value=" submit "  class="btn btn-outline-success my-2 my-sm-0">
+                         </form>
+                 </div>
+
+             </div>
+
+
+
+        </div>
