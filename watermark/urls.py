@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import index, watermark
-
+from .views import index,imageRetrive
 
 urlpatterns = [
     path('', index, name="index"),
-    path('watermark', watermark, name='watermark')
+    path('retrive', imageRetrive, name="imageRetrive"),
+
 ]

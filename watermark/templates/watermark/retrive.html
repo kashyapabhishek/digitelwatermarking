@@ -8,7 +8,7 @@
 
 {# This section for the form  and form start here , Form goese to url: host: #}
             <div class="col-6 my-5 mx-5 bg-info">
-                <form class=" " enctype="multipart/form-data" action="" method="post" id="targate" >
+                <form class=" " enctype="multipart/form-data" action="retrive" method="post" id="targate" >
                      {% csrf_token %}
                          {{ form|crispy }}
                     <input type="submit" value=" submit "  class="btn btn-inline-light my-5 my-sm-0 col-3 " style="margin-left: 220px;margin-top: 10px;">
@@ -16,29 +16,4 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-{#  This section for script   #}
-
-<script type="javascript">
-
- document.getElementById("myfile").style.visibility= "hidden";
-
- $(document).ready(function () {
-
-     var name = $('#exampleInputFile').attr("name");
-         $('#id').text("hi") ;
-
- });
-
-
-{# end of script #}
-
-</script>
-
-
 {% endblock %}
