@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import index,imageRetrive
+from .views import index, imageRetrive
 
 urlpatterns = [
     path('', index, name="index"),

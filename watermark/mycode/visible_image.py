@@ -9,7 +9,7 @@ class VisibleImage:
         print(watermarkimage)
         print(mainimage)
         print(watermarkimage)
-        wfile = '/home/abhishek/PycharmProjects/watermarking/media/'+str(watermarkimage)
+        wfile = 'C:/Users/saumy/PycharmProjects/Dwt watermark/src/media/'+str(watermarkimage)
         print('wfile : '+wfile)
         watermark = cv2.imread(wfile, cv2.IMREAD_UNCHANGED)
         (wH, wW) = watermark.shape[:2]
@@ -19,7 +19,7 @@ class VisibleImage:
         G = cv2.bitwise_and(G, G, mask=A)
         R = cv2.bitwise_and(R, R, mask=A)
         watermark = cv2.merge([B, G, R, A])
-        image = cv2.imread('/home/abhishek/PycharmProjects/watermarking/media/'+str(mainimage))
+        image = cv2.imread('C:/Users/saumy/PycharmProjects/Dwt watermark/src/media/'+str(mainimage))
         (h, w) = image.shape[:2]
         image = np.dstack([image, np.ones((h, w), dtype="uint8") * 255])
         overlay = np.zeros((h, w, 4), dtype="uint8")
@@ -27,7 +27,7 @@ class VisibleImage:
         output = image.copy()
         cv2.addWeighted(overlay, 0.5, output, 1.0, 0, output)
 
-        cv2.imwrite('/home/abhishek/PycharmProjects/watermarking/media/' + str(mainimage), output)
+        cv2.imwrite('C:/Users/saumy/PycharmProjects/Dwt watermark/src/media/' + str(mainimage), output)
 
 
 

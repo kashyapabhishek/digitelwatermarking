@@ -3,7 +3,7 @@ from PIL import Image, ImageDraw
 
 
 class Visible:
-    def __init__(self,image,message):
+    def __init__(self, image, message):
         self.image = image
         self.message = message
 
@@ -11,7 +11,7 @@ class Visible:
         print("working dir" + os.getcwd())
         # os.chdir('/home/abhishek/PycharmProjects/watermarking/media/')
         print("working dir" + os.getcwd())
-        filename = '/home/abhishek/PycharmProjects/watermarking/media/' + self.image.name
+        filename = 'C:/Users/saumy/PycharmProjects/Dwt watermark/src/media/' + self.image.name
         main = Image.open(filename)
         watermark = Image.new("RGBA", main.size)
         waterdraw = ImageDraw.ImageDraw(watermark, "RGBA")

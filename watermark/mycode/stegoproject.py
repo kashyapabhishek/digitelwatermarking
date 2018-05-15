@@ -2,7 +2,7 @@ from PIL import Image
 from math import *
 class Invisible:
     def encrypt(self,string,image):
-        image = '/home/abhishek/PycharmProjects/watermarking/media/'+ str(image)
+        image = 'C:/Users/saumy/PycharmProjects/Dwt watermark/src/media/'+ str(image)
         im1 = Image.open(image)
         im2 = im1.size
         pix = im1.load()
@@ -86,7 +86,7 @@ class Invisible:
                 print('Encryption intercepted')
             new_pix1 = pix[(new_pix[0] + i), new_pix[2] + i]
         print('Encryption Complete')
-        im1.save('/home/abhishek/PycharmProjects/watermarking/media/1.bmp')
+        im1.save('C:/Users/saumy/PycharmProjects/Dwt watermark/src/media/2.jpeg')
     def decrypt(self, image):
 	    im1=Image.open(image)
 	    im2=im1.size

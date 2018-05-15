@@ -7,11 +7,13 @@
         <div class="row justify-content-center align-items-center my-5 ">
 
 {# This section for the form  and form start here , Form goese to url: host: #}
-            <div class="col-6 my-5 mx-5 bg-info">
+            <div class="col-4 my-5 mx-5 bg-info">
                 <form class=" " enctype="multipart/form-data" action="retrive" method="post" id="targate" >
                      {% csrf_token %}
                          {{ form|crispy }}
                     <input type="submit" value=" submit "  class="btn btn-inline-light my-5 my-sm-0 col-3 " style="margin-left: 220px;margin-top: 10px;">
+                    <br>
+                    <br>
                 </form>
             </div>
         </div>
