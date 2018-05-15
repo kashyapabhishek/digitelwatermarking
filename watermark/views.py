@@ -7,6 +7,7 @@ from .mycode.visible import Visible
 from .mycode.visible_image import VisibleImage
 from .mycode.stegoproject import Invisible
 from .mycode.dwt import DWT, extract_dwt
+from .mycode.mydwt import embedding, extracting
 from .forms import UploadFileForm, Retrive
 
 
@@ -48,24 +49,24 @@ def index(request):
                 print("Error")
             else:
                 watermark_file = None
+
         if watermark_message_option == 'invisible':
-            print("under invisible ")
+
             try:
                 watermark = request.FILES['watermark_image']
                 fs1 = FileSystemStorage()
                 filename1 = fs1.save(watermark.name, watermark)
                 upload_file_url1 = fs1.url(filename1)
                 print("upload_file_url1" + upload_file_url1)
+
                 if watermark is not None:
-                    print("DWT")
-                    url = DWT(myfile, watermark)
-                    print("jfsalj"+url)
-                    contex = {'myfile': upload_file_url, }
+                    watermark_url = embedding(myfile, watermark)
+                    contex = {'myfile': watermark_url, }
                     return render(request, "watermark/watermark.html", contex)
             except Exception:
                 Invisible().encrypt(watermark_message, myfile)
                 print("gjjjjjjjjjjjjh")
-                contex = {'myfile':upload_file_url}
+                contex = {'myfile': upload_file_url}
                 return render(request, "watermark/watermark.html", contex)
                 print("end")
 
@@ -82,8 +83,8 @@ def imageRetrive(request):
         try:
             watermark = request.FILES['coverImage']
             if watermark is not None:
-                extract_dwt(myfile, watermark)
-                context = {'myfile': 'C:/Users/saumy/PycharmProjects/Dwt watermark/src/media/extracted.jpg'}
+                watermark_return = extracting(watermark, myfile)
+                context = {'myfile': watermark_return}
                 return render(request, "watermark/watermark.html", context)
         except Exception:
             message = Invisible().decrypt(myfile)

@@ -1,7 +1,6 @@
 import cv2
 import pywt
 import numpy as np
-from django.core.files.storage import FileSystemStorage
 
 
 def DWT(cover, watermark):
@@ -38,7 +37,7 @@ def extract_dwt(cover, watermark):
     watermark = cv2.imread(watermark, 0)
 
     #cover = cv2.resize(cover, (300, 300))
-    #watermark = cv2.resize(watermark, (150, 150))
+    #watermark = cv2.resize(watermark, (75, 75))
 
     # DWT on cover image
     cover = np.float32(cover)
