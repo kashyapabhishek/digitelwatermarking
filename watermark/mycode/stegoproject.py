@@ -86,7 +86,7 @@ class Invisible:
                 print('Encryption intercepted')
             new_pix1 = pix[(new_pix[0] + i), new_pix[2] + i]
         print('Encryption Complete')
-        im1.save('C:/Users/saumy/PycharmProjects/Dwt watermark/src/media/2.jpeg')
+        im1.save('C:/Users/saumy/PycharmProjects/Dwt watermark/src/media/2.bmp')
     def decrypt(self, image):
 	    im1=Image.open(image)
 	    im2=im1.size

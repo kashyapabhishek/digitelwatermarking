@@ -11,8 +11,8 @@ from PIL import Image
 
 pygame.init()
 
-ORIGIN_RATE = 0.4
-WATERMARK_RATE = 0.4
+ORIGIN_RATE = 0.1
+WATERMARK_RATE = 0.09
 TMP_PATH = "word2pic.png"
 
 
